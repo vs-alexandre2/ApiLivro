@@ -30,9 +30,8 @@ No **Visual Studio**, abra o **Package Manager Console** em `Ferramentas > Geren
 Update-Database
 
 
-Ou se preferir:
 
-No **VS Code** ou **Prompt de Comando**, abra o terminal na pasta do projeto e execute:
+(Ou se preferir) No **VS Code** ou **Prompt de Comando**, abra o terminal na pasta do projeto e execute:
 
 dotnet ef database update
 
