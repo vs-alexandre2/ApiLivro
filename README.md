@@ -3,6 +3,7 @@
 
 Este projeto é uma API para cadastro de livros, desenvolvida em **ASP.NET Core** e utilizando **Entity Framework Core**. 
 
+
 A conexão com o banco de dados é configurada no arquivo `appsettings.json`, na seção `ConnectionStrings`. A configuração padrão é:
 
 "ConnectionStrings": {
@@ -19,6 +20,7 @@ A conexão com o banco de dados é configurada no arquivo `appsettings.json`, na
 }
 
 Substitua `SERVIDOR_SQL` pelo nome do servidor SQL e `usuario` e `senha` pelas credenciais fornecidas pela empresa. 
+
 
 
 **Aplicando as migrations:** 
