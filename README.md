@@ -1,59 +1,39 @@
 
 # Projeto ApiLivro
 
-Este projeto utiliza **Entity Framework Core** para gerenciar o banco de dados via migrations.
+Este projeto é uma API para cadastro de livros, desenvolvida em **ASP.NET Core** e utilizando **Entity Framework Core**. 
 
----
+A conexão com o banco de dados é configurada no arquivo `appsettings.json`, na seção `ConnectionStrings`. A configuração padrão é:
 
-## Configuração da Connection String
-
-No arquivo `appsettings.json`, existe uma seção chamada `ConnectionStrings`:
-
-```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=localhost;Database=LivrosBD;Trusted_Connection=True;Encrypt=false;TrustServerCertificate=true"
 }
 
-
--- Autenticação do Windows
-
-Trusted_Connection=True significa que o EF Core tentará usar o usuário do Windows atual para se conectar ao SQL Server.
+**Autenticação do Windows:** `Trusted_Connection=True` indica que o EF Core tentará usar o usuário atual do Windows para se conectar ao SQL Server. 
 
 
--- Autenticação SQL (usuário e senha)
-
-Se o servidor não usar autenticação do Windows, ajuste a connection string para incluir usuário e senha:
+**Autenticação com usuário e senha:** Também é possível configurar a conexão com usuário e senha:
 
 "ConnectionStrings": {
   "DefaultConnection": "Server=SERVIDOR_SQL;Database=LivrosBD;User Id=usuario;Password=senha;Encrypt=false;TrustServerCertificate=true"
 }
 
-
-Substitua: SERVIDOR_SQL pelo nome ou endereço do seu servidor SQL e usuario e senha pelas credenciais fornecidas pela empresa.
-
-
----
+Substitua `SERVIDOR_SQL` pelo nome do servidor SQL e `usuario` e `senha` pelas credenciais fornecidas pela empresa. 
 
 
-### Aplicando as Migrations
+**Aplicando as migrations:** 
 
-Depois de configurar a connection string corretamente, siga os passos:
+No **Visual Studio**, abra o **Package Manager Console** em `Ferramentas > Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes` e execute:
 
-
--- Usando Visual Studio (Package Manager Console)
-
-Abra o Package Manager Console em:
-
-Ferramentas > Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes
-
-Execute: Update-Database
+Update-Database
 
 
--- Usando Terminal (VS Code ou Prompt de Comando)
+No **VS Code** ou **Prompt de Comando**, abra o terminal na pasta do projeto e execute:
 
-Abra o terminal na pasta do projeto
-
-Execute: dotnet ef database update
+dotnet ef database update
 
 
-Isso cria o banco de dados (se não existir) e aplica as migrations, gerando as tabelas conforme os modelos definidos.
+Isso criará o banco de dados (se ainda não existir) e aplicará as migrations, gerando automaticamente as tabelas conforme os modelos definidos no projeto.
+
+
+
