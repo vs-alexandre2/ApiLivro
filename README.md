@@ -1,7 +1,7 @@
 
 # Projeto ApiLivro
 
-Este projeto é uma API para cadastro de livros, desenvolvida em **ASP.NET Core** e utilizando **Entity Framework Core**. 
+Este projeto é uma API para cadastro de livros, desenvolvida em **ASP.NET Core**, utilizando **Entity Framework Core** e **SQL Server**. 
 
 
 A conexão com o banco de dados é configurada no arquivo `appsettings.json`, na seção `ConnectionStrings`. A configuração padrão é:
