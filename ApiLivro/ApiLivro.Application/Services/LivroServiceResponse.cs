@@ -1,6 +1,6 @@
-﻿namespace ApiTarefa.ApiTarefa.Application.Services
+﻿namespace ApiLivro.ApiLivro.Application.Services
 {
-    public class TarefaServiceResponse<T>
+    public class LivroServiceResponse<T>
     {
         public T? Dados { get; set; }
         public string Mensagem { get; set; } = string.Empty;

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using ApiTarefa.ApiTarefa.Infrastructure.DataContexts;
-using ApiTarefa.ApiTarefa.Infrastructure.Repositorys;
-using ApiTarefa.ApiTarefa.Domain.Models;
-using ApiTarefa.ApiTarefa.Domain.Validations;
+using ApiLivro.ApiLivro.Infrastructure.DataContexts;
+using ApiLivro.ApiLivro.Infrastructure.Repositorys;
+using ApiLivro.ApiLivro.Domain.Models;
+using ApiLivro.ApiLivro.Domain.Validations;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 
@@ -14,16 +14,16 @@ builder.Services.AddControllers().AddFluentValidation();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<ITarefaRepository,TarefaRepository>();
-builder.Services.AddTransient<IValidator<TarefaModel>, TarefaValidator>();
-builder.Services.AddDbContext<TarefaDbContext>(options =>
+builder.Services.AddScoped<ILivroRepository,LivroRepository>();
+builder.Services.AddTransient<IValidator<LivroModel>, LivroValidator>();
+builder.Services.AddDbContext<LivroDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("TarefasApp", builder =>
+    options.AddPolicy("LivrosApp", builder =>
     {
         builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
@@ -37,7 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("TarefasApp");
+app.UseCors("LivrosApp");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

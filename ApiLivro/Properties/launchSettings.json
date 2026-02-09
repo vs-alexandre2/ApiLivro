@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "ApiTarefa": {
+    "ApiLivro": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
